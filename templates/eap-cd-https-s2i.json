@@ -29,6 +29,13 @@
             "required": true
         },
         {
+            "displayName": "Custom http Route Hostname",
+            "description": "Custom hostname for http service route.  Leave blank for default hostname, e.g.: <application-name>-<project>.<default-domain-suffix>",
+            "name": "HOSTNAME_HTTP",
+            "value": "",
+            "required": false
+        },
+        {
             "displayName": "Custom https Route Hostname",
             "description": "Custom hostname for https service route.  Leave blank for default hostname, e.g.: secure-<application-name>-<project>.<default-domain-suffix>",
             "name": "HOSTNAME_HTTPS",
@@ -288,6 +295,7 @@
                 }
             },
             "spec": {
+                "host": "${HOSTNAME_HTTP}",
                 "to": {
                     "name": "${APPLICATION_NAME}"
                 }
